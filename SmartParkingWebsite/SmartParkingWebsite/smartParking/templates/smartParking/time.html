@@ -1,0 +1,37 @@
+{% extends "smartParking/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container w-75">
+
+<div
+        class="d-flex justify-content-center m-5">
+					<h1>SLOT DETAILS</h1>
+				</div>
+<table class="table">
+
+  <thead>
+    <tr>
+        <th scope="col"><h5>slot id</h5></th>
+        <th scope="col"><h5>Status</h5></th>
+        <th scope="col"><h5>time</h5></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for t in time %}
+    <tr>
+      <td>{{t.tid}}</td>
+      <td>{{t.status}}</td>
+      <td>{{t.time}}</td>
+    </tr>
+ {% endfor %}
+
+  </tbody>
+
+
+</table>
+</div>
+
+
+
+{% endblock content%}

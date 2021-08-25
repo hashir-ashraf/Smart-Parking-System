@@ -1,0 +1,85 @@
+{% extends "smartParking/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container w-75">
+
+<div
+        class="d-flex justify-content-center m-5">
+					<h1>SLOT DETAILS</h1>
+				</div>
+<table class="table">
+
+  <thead>
+    <tr>
+        <th scope="col"><h5>Slot Number</h5></th>
+        <th scope="col"><h5>Status</h5></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for slot in slots %}
+    <tr>
+      <td>{{slot.s_id}}</td>
+      <td>{{slot.status}}</td>
+    </tr>
+ {% endfor %}
+
+
+  </tbody>
+
+      <thead>
+    <tr>
+        <th scope="col"><h5>driver id</h5></th>
+        <th scope="col"><h5>driver name</h5></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for driver in drivers %}
+    <tr>
+      <td>{{driver.id}}</td>
+      <td>{{driver.name}}</td>
+    </tr>
+ {% endfor %}
+
+
+  </tbody>
+
+
+
+
+
+
+  <thead>
+    <tr>
+
+        <th scope="col"><h5>Reservation No</h5></th>
+        <th scope="col"><h5>Driver Id</h5></th>
+        <th scope="col"><h5>Slot Id</h5></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for reserve in reservations %}
+    <tr>
+      <td>{{reserve.id}}</td>
+      <td>{{reserve.driver.name}}</td>
+      <td>{{reserve.slots.id}}</td>
+
+      <td><a href="{% url 'SmartParking-cancel' id=reserve.id %}" class="btn btn-outline-secondary"  >
+
+          Cancel Reservation </a></td>
+
+    </tr>
+ {% endfor %}
+
+
+  </tbody>
+
+
+</table>
+</div>
+
+
+
+{% endblock content%}

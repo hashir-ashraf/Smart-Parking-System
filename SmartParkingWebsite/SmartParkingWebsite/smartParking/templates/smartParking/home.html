@@ -1,0 +1,35 @@
+{% extends "smartParking/base.html" %}
+ {% load static %}
+{% block content %}
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<header>
+					<h1>Welcome to Smart Parking System</h1>
+				</header>
+
+				<div class="flex ">
+
+					<div>
+						<span class="icon fa-car"></span>
+						<a href="{% url 'SmartParking-slotDetails'%}"><h3>View Details</h3></a>
+						<p>Check details abouts users </p>
+					</div>
+					<div>
+						<span class="icon fa-camera"></span>
+						<a href="{% url 'SmartParking-detector'%}"><h3>Cameras</h3></a>
+
+						<p>Cameras for number plate and slots</p>
+					</div>
+
+
+
+				</div>
+
+
+			</div>
+		</section>
+
+
+
+{%endblock content%}
