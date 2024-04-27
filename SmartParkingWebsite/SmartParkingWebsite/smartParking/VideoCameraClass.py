@@ -237,7 +237,7 @@ def setNoOfSlotsInDB():
     con.close()
     f.close()
 
-# d
+
 # def setNoOfSlotsIntimeDB():
 #     f = open("demo.txt", "r")
 #     con = sqlite3.connect("db.sqlite3")
